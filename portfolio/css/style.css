@@ -196,6 +196,12 @@ img {
   box-shadow: 0 10px 30px rgba(77, 47, 30, 0.06);
 }
 
+.toc-card {
+  position: sticky;
+  top: 7rem;
+  align-self: start;
+}
+
 .card-number {
   display: inline-block;
   font-size: 2rem;
@@ -377,6 +383,11 @@ img {
   gap: 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.connect-card {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .connect-card ul {
