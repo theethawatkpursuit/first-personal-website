@@ -139,6 +139,28 @@ img {
   background: var(--text);
   padding: 1.5rem 2rem;
   border-radius: 24px;
+  margin: 0;
+}
+
+.hero-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-name-pill {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 20px rgba(77, 47, 30, 0.08);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
 }
 
 .scroll-quote {
