@@ -69,7 +69,7 @@ function renderProjects() {
       card.href = `projects.html#${project.id}`;
       card.innerHTML = `
         <div class="card-title">${project.title}</div>
-        <img src="${project.image}" alt="${project.title} placeholder" />
+        <img class="project-image" src="${project.image}" alt="${project.title}" />
       `;
       previewGrid.appendChild(card);
     });
@@ -91,7 +91,7 @@ function renderProjects() {
       section.id = project.id;
       section.className = 'project-detail-card';
       section.innerHTML = `
-        <img src="${project.image}" alt="${project.title} placeholder" />
+        <img class="project-image" src="${project.image}" alt="${project.title}" />
         <h3>${project.title}</h3>
         <p>${project.description}</p>
         <p>${project.details}</p>

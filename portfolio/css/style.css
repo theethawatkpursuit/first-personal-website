@@ -271,7 +271,7 @@ img {
   flex-direction: column;
   border-radius: 24px;
   overflow: hidden;
-  min-height: 260px;
+  min-height: 300px;
   border: 1px solid var(--border);
   background: #fff;
 }
@@ -281,14 +281,19 @@ img {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
-  min-height: 20%;
+  min-height: 56px;
+  flex-shrink: 0;
 }
 
-.project-card img {
-  height: 80%;
+.project-card .project-image {
   width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
   object-fit: cover;
+  object-position: center;
   background: #f5ebdf;
+  display: block;
+  flex-shrink: 0;
 }
 
 .skills-scroll {
@@ -417,12 +422,16 @@ img {
   padding: 1.5rem;
 }
 
-.project-detail-card img {
+.project-detail-card .project-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
   border-radius: 20px;
   margin-bottom: 1rem;
   background: #f5ebdf;
-  min-height: 240px;
-  object-fit: cover;
+  display: block;
 }
 
 .connect-grid {
