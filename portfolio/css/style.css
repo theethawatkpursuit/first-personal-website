@@ -267,13 +267,20 @@ img {
 }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 220px;
   border-radius: 24px;
   overflow: hidden;
   min-height: 300px;
   border: 1px solid var(--border);
   background: #fff;
+}
+
+.project-card .card-image-wrap {
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  background: #f5ebdf;
 }
 
 .project-card .card-title {
@@ -287,8 +294,7 @@ img {
 
 .project-card .project-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  height: auto;
+  height: 220px;
   object-fit: cover;
   object-position: center;
   background: #f5ebdf;
@@ -447,8 +453,50 @@ img {
   word-break: break-word;
 }
 
+.connect-card a {
+  position: relative;
+  display: inline;
+  color: var(--accent);
+  font-weight: 600;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.connect-card a::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+  pointer-events: none;
+}
+
+.connect-card a:hover,
+.connect-card a:focus-visible {
+  color: var(--text);
+}
+
+.connect-card a:hover::before,
+.connect-card a:focus-visible::before {
+  width: 100%;
+}
+
 .connect-card ul {
-  padding-left: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.connect-card li {
+  margin-bottom: 0.5rem;
+}
+
+.connect-card li a {
+  display: inline;
+  line-height: 1.6;
 }
 
 .site-footer {

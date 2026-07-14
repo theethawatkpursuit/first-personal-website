@@ -69,7 +69,9 @@ function renderProjects() {
       card.href = `projects.html#${project.id}`;
       card.innerHTML = `
         <div class="card-title">${project.title}</div>
-        <img class="project-image" src="${project.image}" alt="${project.title}" />
+        <div class="card-image-wrap">
+          <img class="project-image" src="${project.image}" alt="${project.title}" />
+        </div>
       `;
       previewGrid.appendChild(card);
     });
