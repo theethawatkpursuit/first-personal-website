@@ -1,23 +1,23 @@
 const projectData = [
   {
-    id: 'soundscape-studio',
-    title: 'Soundscape Studio',
-    image: 'assets/images/project-1.svg',
-    description: 'A concept for a collaborative audio-first experience where players shape mood and pacing through sound cues.',
-    details: 'Soundscape Studio explores how interactive design can make listening feel personal and immersive. I focused on arranging sound elements that support story beats without overwhelming the audience.'
+    id: 'escape-the-tower',
+    title: 'Escape The Tower',
+    image: 'assets/images/Escape The Tower.png',
+    description: 'The first game I ever made. It is a shooter game where the player must escape a tower while avoiding enemies moving through walls. Ricocheting bullets off walls gain extra points.',
+    details: 'I made Escape The Tower with two classmates who were very inexperienced with video game development and coding. My existing knowledge of coding made me comfortable with learning Godot and teaching my teammates how to use it. I learned a lot about teamwork, communication, and the importance of keeping a project organized as I faced the challenges of having to constantly help my teammates while also working on my own tasks. I also learned how to design a game with engaging mechanics and a fun player experience in mind, as well as how to make a game that is visually appealing and easy to understand.'
   },
   {
-    id: 'motion-mosaic',
-    title: 'Motion Mosaic',
-    image: 'assets/images/project-2.svg',
-    description: 'A short-form video experiment built around layered visuals and transitions that create a cinematic rhythm.',
+    id: 'rootsong-enlighten-the-forest',
+    title: 'Rootsong: Enlighten The Forest',
+    image: 'assets/images/Rootsong - Enlighten The Forest.png',
+    description: 'The second game I\'ve made. It is a rhythm game where the player must move in time with the music in cursed zones to move and gain power to defeat enemies.',
     details: 'Motion Mosaic helped me practice pacing, visual storytelling, and editing flow. It also taught me how to keep creative ideas organized when a project grows quickly.'
   },
   {
-    id: 'calm-canvas',
-    title: 'Calm Canvas',
-    image: 'assets/images/project-3.svg',
-    description: 'A web concept designed to feel soothing and clear, with an interface that helps visitors move through content effortlessly.',
+    id: 'nyc-eats',
+    title: 'NYC Eats',
+    image: 'assets/images/NYC Eats.png',
+    description: 'A website I created with classmates while trying to relearn HTML, CSS, and JavaScript. It features a simple layout for sharing restaurant reviews and recommendations.',
     details: 'Calm Canvas is rooted in simplicity. I used it to work on readable layouts, thoughtful structure, and the feeling of calm that can come from a well-organized page.'
   },
   {
