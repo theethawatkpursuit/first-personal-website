@@ -226,6 +226,65 @@ img {
   margin: 0;
 }
 
+.timeline-shell {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 1.35rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--border));
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.timeline-marker {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 8px 20px rgba(77, 47, 30, 0.12);
+}
+
+.timeline-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(77, 47, 30, 0.06);
+}
+
+.timeline-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.timeline-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
 .story-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(220px, 1fr));
