@@ -252,10 +252,10 @@ img {
 
 .card-number {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
   color: var(--accent);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0rem;
 }
 
 .project-grid {
