@@ -329,6 +329,32 @@ img {
   align-self: start;
 }
 
+.project-index-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 auto 1rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(77, 47, 30, 0.08);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.project-index-toggle:hover,
+.project-index-toggle:focus-visible {
+  background: var(--text);
+  border-color: var(--text);
+  color: #fff;
+}
+
 .card-number {
   display: inline-block;
   font-size: 3rem;
@@ -625,6 +651,16 @@ body.project-index-open {
 }
 
 @media (max-width: 900px) {
+  .project-index-toggle {
+    position: fixed;
+    top: 8.25rem;
+    left: 50%;
+    z-index: 1100;
+    display: inline-flex;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
   .hero-copy,
   .about-intro,
   .about-card,

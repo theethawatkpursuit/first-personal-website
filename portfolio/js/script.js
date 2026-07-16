@@ -155,6 +155,8 @@ function setupProjectIndexDrawer() {
   const drawer = document.getElementById('project-index');
   if (!drawer) return;
 
+  const toggleButton = document.querySelector('.project-index-toggle');
+
   const mobileQuery = window.matchMedia('(max-width: 900px)');
   const backdrop = document.createElement('div');
   backdrop.className = 'project-index-backdrop';
@@ -172,6 +174,7 @@ function setupProjectIndexDrawer() {
     requestAnimationFrame(() => backdrop.classList.add('is-visible'));
     document.body.classList.add('project-index-open');
     drawer.setAttribute('aria-hidden', 'false');
+    if (toggleButton) toggleButton.setAttribute('aria-expanded', 'true');
   };
 
   const closeDrawer = () => {
@@ -179,6 +182,7 @@ function setupProjectIndexDrawer() {
     backdrop.classList.remove('is-visible');
     document.body.classList.remove('project-index-open');
     drawer.setAttribute('aria-hidden', mobileQuery.matches ? 'true' : 'false');
+    if (toggleButton) toggleButton.setAttribute('aria-expanded', 'false');
 
     window.setTimeout(() => {
       if (!backdrop.classList.contains('is-visible')) {
@@ -201,6 +205,7 @@ function setupProjectIndexDrawer() {
     backdrop.hidden = true;
     document.body.classList.remove('project-index-open');
     drawer.setAttribute('aria-hidden', 'false');
+    if (toggleButton) toggleButton.setAttribute('aria-expanded', 'false');
   };
 
   document.addEventListener('touchstart', (event) => {
@@ -237,7 +242,10 @@ function setupProjectIndexDrawer() {
     }
   });
 
+
   backdrop.addEventListener('click', closeDrawer);
+  if (toggleButton) toggleButton.addEventListener('click', openDrawer);
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') closeDrawer();
   });
