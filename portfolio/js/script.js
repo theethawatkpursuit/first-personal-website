@@ -151,6 +151,106 @@ function renderProjects() {
   }
 }
 
+function setupProjectIndexDrawer() {
+  const drawer = document.getElementById('project-index');
+  if (!drawer) return;
+
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
+  const backdrop = document.createElement('div');
+  backdrop.className = 'project-index-backdrop';
+  backdrop.hidden = true;
+  document.body.appendChild(backdrop);
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let isTouchTracking = false;
+
+  const openDrawer = () => {
+    if (!mobileQuery.matches) return;
+    drawer.classList.add('is-open');
+    backdrop.hidden = false;
+    requestAnimationFrame(() => backdrop.classList.add('is-visible'));
+    document.body.classList.add('project-index-open');
+    drawer.setAttribute('aria-hidden', 'false');
+  };
+
+  const closeDrawer = () => {
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-visible');
+    document.body.classList.remove('project-index-open');
+    drawer.setAttribute('aria-hidden', mobileQuery.matches ? 'true' : 'false');
+
+    window.setTimeout(() => {
+      if (!backdrop.classList.contains('is-visible')) {
+        backdrop.hidden = true;
+      }
+    }, 220);
+  };
+
+  const syncDrawerMode = () => {
+    if (mobileQuery.matches) {
+      if (!drawer.classList.contains('is-open')) {
+        drawer.setAttribute('aria-hidden', 'true');
+        backdrop.hidden = true;
+      }
+      return;
+    }
+
+    drawer.classList.remove('is-open');
+    backdrop.classList.remove('is-visible');
+    backdrop.hidden = true;
+    document.body.classList.remove('project-index-open');
+    drawer.setAttribute('aria-hidden', 'false');
+  };
+
+  document.addEventListener('touchstart', (event) => {
+    if (!mobileQuery.matches || event.touches.length !== 1) return;
+
+    const touch = event.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    isTouchTracking = touchStartX <= 48 || drawer.classList.contains('is-open');
+  }, { passive: true });
+
+  document.addEventListener('touchend', (event) => {
+    if (!isTouchTracking || !event.changedTouches.length) return;
+
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+    const isMostlyHorizontal = Math.abs(deltaX) > Math.abs(deltaY) * 1.5;
+
+    if (touchStartX <= 48 && deltaX > 80 && isMostlyHorizontal) {
+      openDrawer();
+    }
+
+    if (drawer.classList.contains('is-open') && deltaX < -80 && isMostlyHorizontal) {
+      closeDrawer();
+    }
+
+    isTouchTracking = false;
+  }, { passive: true });
+
+  drawer.addEventListener('click', (event) => {
+    if (event.target.closest('.project-link')) {
+      closeDrawer();
+    }
+  });
+
+  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeDrawer();
+  });
+
+  if (typeof mobileQuery.addEventListener === 'function') {
+    mobileQuery.addEventListener('change', syncDrawerMode);
+  } else {
+    mobileQuery.addListener(syncDrawerMode);
+  }
+
+  syncDrawerMode();
+}
+
 function observeScrollQuote() {
   const quote = document.querySelector('.fade-quote');
   if (!quote) return;
@@ -169,4 +269,5 @@ function observeScrollQuote() {
 window.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   observeScrollQuote();
+  setupProjectIndexDrawer();
 });
