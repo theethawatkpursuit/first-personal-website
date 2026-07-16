@@ -346,6 +346,7 @@ img {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
+  white-space: nowrap; /* Add this line */
 }
 
 .project-index-toggle:hover,

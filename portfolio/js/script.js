@@ -136,17 +136,32 @@ function renderProjects() {
   }
 
   if (details) {
-    projectData.forEach((project) => {
-      const section = document.createElement('section');
-      section.id = project.id;
-      section.className = 'project-detail-card';
-      section.innerHTML = `
-        <img class="project-image" src="${project.image}" alt="${project.title}" />
-        <h3>${project.title}</h3>
-        <p>${project.description}</p>
-        <p>${project.details}</p>
-      `;
-      details.appendChild(section);
+    [
+      { title: 'Created Projects', projects: createdProjects },
+      { title: 'Future Projects', projects: futureProjects }
+    ].forEach((group) => {
+      // 1. Create and append the category heading
+      const categoryHeading = document.createElement('h2');
+      categoryHeading.className = 'section-heading'; // Reusing your existing CSS class for consistency
+      categoryHeading.style.textAlign = 'left'; // Overriding the center text align for a cleaner look
+      categoryHeading.style.marginTop = '2rem';
+      categoryHeading.style.marginBottom = '1.5rem';
+      categoryHeading.textContent = group.title;
+      details.appendChild(categoryHeading);
+
+      // 2. Loop through the projects in this specific group
+      group.projects.forEach((project) => {
+        const section = document.createElement('section');
+        section.id = project.id;
+        section.className = 'project-detail-card';
+        section.innerHTML = `
+          <img class="project-image" src="${project.image}" alt="${project.title}" />
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <p>${project.details}</p>
+        `;
+        details.appendChild(section);
+      });
     });
   }
 }
