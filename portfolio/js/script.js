@@ -1,5 +1,21 @@
 const projectData = [
   {
+    id: 'whos-that-instructor',
+    title: 'Who\'s That Instructor?',
+    image: 'assets/images/Who\'s That Instructor.png',
+    description: 'A website I made in a coding bootcamp with other students. It is a game inspired by the "Who\'s That Pokémon?" segment of the Pokémon anime, where players guess the instructor based on a silhouette and a few hints.',
+    details: 'Who\'s That Instructor? served as my proper introduction to creating a program with collaborators. Admittedly I was a bit lost and had yet to truly understand how any ounce of code worked, but thankfully, my collaborators were happy to review with me how everything worked. In the end, this experience ended up being one of the biggest contributors to my knowledge of JavaScript and really started my journey of valuing teamwork in computer science.',
+    category: 'created'
+  },
+  {
+    id: 'nyc-eats',
+    title: 'NYC Eats',
+    image: 'assets/images/NYC Eats.png',
+    description: 'A website I created with classmates while trying to relearn HTML, CSS, and JavaScript. It features a simple layout for sharing our restaurant reviews and recommendations.',
+    details: 'NYC Eats was a project assigned within the first computer science class I took at Fordham University, where my group and I all had to create a proper website using HTML, CSS and JavaScript. However, between Who’s That Instructor and this, I learned more about how to build websites thanks to coming in contact with a friend who was able to teach me every weekend. As such, this website ended up being one of my first opportunities to put my newfound knowledge of website building to use as well as my first in-person opportunity to build a website with collaborators, since the bootcamp I built Who’s That Instructor in was virtual.',
+    category: 'created'
+  },
+  {
     id: 'escape-the-tower',
     title: 'Escape The Tower',
     image: 'assets/images/Escape The Tower.png',
@@ -12,23 +28,7 @@ const projectData = [
     title: 'Rootsong: Enlighten The Forest',
     image: 'assets/images/Rootsong - Enlighten The Forest.png',
     description: 'The second game I\'ve made. It is a rhythm game where the player must move in time with the music in cursed zones to move and gain power to defeat enemies.',
-    details: 'Motion Mosaic helped me practice pacing, visual storytelling, and editing flow. It also taught me how to keep creative ideas organized when a project grows quickly.',
-    category: 'created'
-  },
-  {
-    id: 'nyc-eats',
-    title: 'NYC Eats',
-    image: 'assets/images/NYC Eats.png',
-    description: 'A website I created with classmates while trying to relearn HTML, CSS, and JavaScript. It features a simple layout for sharing restaurant reviews and recommendations.',
-    details: 'Calm Canvas is rooted in simplicity. I used it to work on readable layouts, thoughtful structure, and the feeling of calm that can come from a well-organized page.',
-    category: 'created'
-  },
-  {
-    id: 'team-bridge',
-    title: 'Team Bridge',
-    image: 'assets/images/project-4.svg',
-    description: 'A planning prototype for helping teams recover from stress by reorganizing work into clear, manageable steps.',
-    details: 'Team Bridge reflects one of my strongest interests: helping groups stay functional when pressure rises. I structured the project around organization, communication, and compassionate planning.',
+    details: 'Coming fresh off Escape The Tower, the other main assignment my professor gave us for this class was to create a bigger game, this time with more people of our choosing. Now that I had more experienced people working with me, I was able to ask them for help if I was struggling with something. Ultimately, Rootsong: Escape The Forest was able to allow me to expand my knowledge of vibe coding with Godot and using GitHub with multiple collaborators, as well as create a proper workflow under the tight schedule that we were given.',
     category: 'created'
   },
   {
